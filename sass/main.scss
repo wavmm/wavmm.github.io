@@ -1,0 +1,434 @@
+// In `sass/main.scss`
+@import 'mixin';
+@import 'sanitize';
+
+// fonts
+@font-face { font-family: 'Interstate-BlackCond'; src: url("../fonts/Interstate-BlackCond.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Interstate-Bold'; src: url("../fonts/Interstate-Bold.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Interstate-BoldCond'; src: url("../fonts/Interstate-BoldCond.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'Interstate-Regular'; src: url("../fonts/Interstate-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+// variables
+$font-blackCond: "Interstate-BlackCond", sans-serif; 
+$font-Bold: "Interstate-Bold", sans-serif; 
+$font-BoldCond: "Interstate-BoldCond", sans-serif; 
+$font-reg: "Interstate-Regular", sans-serif; 
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/37441d");
+@font-face {font-family: 'Campton-SemiBold';src: url('../fonts/37441D_0_0.eot');src: url('../fonts/37441D_0_0.eot?#iefix') format('embedded-opentype'),url('../fonts/37441D_0_0.woff2') format('woff2'),url('../fonts/37441D_0_0.woff') format('woff'),url('../fonts/37441D_0_0.ttf') format('truetype');}
+
+
+$font-title: "Campton-SemiBold", sans-serif; 
+$font-copy: 'Roboto', sans-serif;
+
+$black: #302E2D;
+$white: #fff;
+$yellow: #FFDC54;
+
+html, body { height: 100%; margin: 0; padding: 0; }
+
+/* ==========================================================================
+	 Author's custom styles
+	 ========================================================================== */
+.landing_page {
+	padding: 0;
+	margin: 0 auto;
+	color: #333;
+	@include font-size(22px);
+	line-height: 1.37;
+	font-family: $font-copy;
+	font-weight: normal;
+	color: $black;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #f9f9f9;
+	strong {
+		font-weight: 600;
+	}
+	.ftitle {
+		font-family: $font-title;
+		font-weight: normal;
+	}
+	h1,h2,h3,h4 {
+		font-family: $font-title;
+		line-height: 100%;
+		margin: 0;
+		font-weight: normal;
+	}
+	a {
+		text-decoration: none;
+	}
+	p {
+		margin: 0;
+	}
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+	article {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	section {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1048px;
+		background-color: #fff;
+		p {
+			margin-bottom: 1em;
+			a {
+				text-decoration: underline;
+				font-weight: 600;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	.transi { transition: all 300ms ease-in-out; }
+
+	.videoWrapper {
+		position: relative;
+		// padding-bottom: 56.25%; /* 16:9 */
+		// padding-top: 25px;
+		height: 327px;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.video {
+		position: relative;
+		.videoWrapper {
+			display: none;
+			background-color: #fff;      
+		}
+		img {
+			display: block;
+		}
+		.videoCTA {
+			cursor: pointer;
+			&:hover {
+				.play {
+					opacity: 1;
+				}
+			}
+		}
+		.play {
+			opacity: 0.6;
+			transition: 300ms ease-in-out;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -43px;
+			margin-top: -49px;
+		}
+	}
+	
+	.alignMiddle {
+		height: 268px;
+		p {
+			padding: 0 40px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.maxwidth {
+		max-width: 620px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.container {
+		padding: 0 30px;
+	}
+
+	.dl {
+		position: relative;
+		z-index: 10;
+		text-align: center;
+		span {
+			font-family: $font-title;
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+		a {
+			display: inline-block;
+			margin: 0 5px;
+		}
+		img {
+			display: inline-block;
+		}
+		&.first {
+			position: relative;
+			top: -30px;
+		}
+		&.second {
+			margin-bottom: 46px;
+		}
+	}
+	.cta {
+		width: 100%;
+		text-align: center;
+		a {
+			transition: all 0.15s ease;
+			font-family: $font-title;
+			display: inline-block;
+			margin-left: auto;
+			margin-right: auto;
+			background: $yellow;
+			text-align: center;
+			border-radius: 6px;
+			@include font-size(22px);
+			line-height: 59px;
+			padding: 0 29px;
+			margin-bottom: 20px;
+			&:hover {
+				background-color: #E2C34A;
+			}
+		}
+	}
+
+
+	header.main {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+		nav {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			z-index: 20;
+			padding-top: 20px;
+			padding-bottom: 5px;
+			padding-left: 20px;
+			padding-right: 20px;
+			div {
+				max-width: 985px;
+				margin-left: auto;
+				margin-right: auto;
+				position: relative;
+			}
+			.logo-mixmag {
+				width: 200px;
+				@include bp-mobile {
+					width: 248px;
+				}
+			}
+			a.goback {
+				@include font-size(16px);
+				line-height: 95%;
+				padding-top: 5px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				@include bp-tablet {
+					padding-top: 11px;
+				}
+				span {
+					display: block;
+					@include bp-tablet {
+						display: inline;
+					}
+				}
+			}
+		}
+		.hero {
+			text-align: center;
+			background: url(../images/hero_bg.jpg) center top no-repeat;
+			background-size: cover;
+			position: relative;
+			article {
+				padding-top: 155px;
+				padding-left: 30px;
+				padding-right: 30px;
+				padding-bottom: 107px;
+				@include bp-tablet {
+					padding-top: 225px;
+					padding-bottom: 125px;
+				}
+			}
+			.title {
+				text-transform: uppercase;
+				line-height: 95%;
+				font-size: 7vw;
+				margin-bottom: 40px;
+				max-width: 1008px;
+				margin-left: auto;
+				margin-right: auto;
+				@include bp-mobile {
+					@include font-size(40px);
+				}
+				@include bp-tablet {
+					margin-bottom: 29px;
+					@include font-size(58px);
+				}
+			}
+
+			p {
+				max-width: 660px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 1.5em;
+				@include font-size(18px);
+			}
+		}
+	}
+
+	.video {
+		margin-bottom: 49px;
+		@include bp-tablet {
+			padding-top: 28px;
+			margin-bottom: 44px;
+		}
+		max-width: 580px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.h2 {
+		@include font-size(24px);
+		margin-bottom: 32px;
+		@include bp-mobile {
+			@include font-size(28px);
+		}
+		@include bp-tablet {
+			line-height: 52px;
+		}
+	}
+
+	.yellow-list {
+		counter-reset: section;
+		text-align: left;
+		overflow: hidden;
+		margin-bottom: 50px;
+		li {
+			display: block;
+			position: relative;
+			@include bp-tablet {
+				width: 50%;
+				float: left;
+				margin-bottom: 30px;
+				p {
+					padding-right: 32px;
+				}
+			}
+			@include bp-desktop {
+				width: 33.33%;
+			}
+			&:before {
+				counter-increment: section;
+				color: $yellow;
+				position: absolute;
+				left: 0;
+				top: 0;
+				font-family: $font-title;
+				@include font-size(32px);
+    			content: "0" counter(section) "";
+    			@include bp-tablet {
+    				top: -3px;
+    			}
+			}
+			p {
+				padding-left: 55px;
+				@include font-size(18px);
+			}
+		}
+	}
+	.faq {
+		position: relative;
+		padding-top: 44px;
+		padding-bottom: 30px;
+		&:before {
+			left: 30px;
+			right: 30px;
+			position: absolute;
+			top: 0;
+			background-color: #eee;
+			height: 1px;
+			@include bp-tablet {
+				display: block;
+				content: "";
+			}
+		}
+	}
+	.accordion-list {
+		text-align: left;
+		overflow: hidden;
+		margin-bottom: 30px;
+		.accordion-item {
+			display: block;
+			padding-bottom: 26px;
+			border: 1px solid #EEEEEE;
+			border-color-left: transparent;
+			border-color-right: transparent;
+			@include bp-tablet {
+				border-color: #EEEEEE;
+			}
+			margin-bottom: 10px;
+			.accordion-toggle {
+				cursor: pointer;
+				padding-top: 36px;
+				position: relative;
+				@extend .container;
+				font-family: $font-title;
+				@include font-size(20px);
+				@include bp-tablet {
+					@include font-size(22px);
+				}
+				.q {
+					padding-right: 40px;
+					padding-bottom: 14px;
+					line-height: 118%;
+				}
+				i {
+					transition: all 0.1s ease;
+					display: block;
+					position: absolute;
+					right: 30px;
+					top: 42px;
+					width: 26px;
+					height: 15px;
+					background: url(../images/icon-arrow.png) center top no-repeat;
+					background-size: 100%;
+				}
+			}
+			&.is-open {
+				background-color: #F9F9F9;
+				.accordion-toggle {
+					i {
+						transform: rotate(180deg);
+					}
+				}
+				.accordion-content {
+					max-height: 500px;
+				}
+			}
+			.accordion-content {
+				overflow: hidden;
+				max-height: 0;
+				@extend .transi;
+				a {
+					text-decoration: underline;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+				p {
+					@include font-size(18px);
+					@extend .container;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
