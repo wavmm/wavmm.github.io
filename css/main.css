@@ -52,7 +52,7 @@ html, body { height: 100%; margin: 0; padding: 0; }
 .landing_page strong { font-weight: 600; }
 .landing_page .ftitle { font-family: "Campton-SemiBold", sans-serif; font-weight: normal; }
 .landing_page h1, .landing_page h2, .landing_page h3, .landing_page h4 { font-family: "Campton-SemiBold", sans-serif; line-height: 100%; margin: 0; font-weight: normal; }
-.landing_page a { text-decoration: none; color: #FFDC54; }
+.landing_page a { text-decoration: none; font-weight: bold; }
 .landing_page p { margin: 0; }
 .landing_page img { height: auto; max-width: 100%; }
 .landing_page article { position: relative; margin-left: auto; margin-right: auto; }
