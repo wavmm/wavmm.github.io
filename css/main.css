@@ -129,3 +129,5 @@ html, body { height: 100%; margin: 0; padding: 0; }
 .landing_page .accordion-list .accordion-item .accordion-content a { text-decoration: underline; }
 .landing_page .accordion-list .accordion-item .accordion-content a:hover { text-decoration: none; }
 .landing_page .accordion-list .accordion-item .accordion-content p { font-size: 18px; font-size: 1.125rem; margin-bottom: 0; }
+p.magnified {
+  font-size: 1em !important;}
